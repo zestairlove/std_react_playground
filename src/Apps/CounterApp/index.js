@@ -4,19 +4,19 @@ import Counter from './components/Counter';
 class CounterApp extends Component {
   state = {
     number: 0
-  }
+  };
 
   handleIncrement = () => {
     this.setState({
       number: this.state.number + 1
-    })
-  }
+    });
+  };
 
   handleDecrement = () => {
     this.setState({
       number: this.state.number - 1
     });
-  }
+  };
 
   render() {
     return (
@@ -27,8 +27,8 @@ class CounterApp extends Component {
           onDecrement={this.handleDecrement}
         />
       </div>
-    )
+    );
   }
-};
+}
 
 export default CounterApp;

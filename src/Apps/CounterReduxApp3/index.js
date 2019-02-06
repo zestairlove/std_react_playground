@@ -7,9 +7,12 @@ import { Provider } from 'react-redux';
 import reducers from './reducers';
 
 // create store
-const store = createStore(reducers);
+const store = createStore(
+  reducers,
+  window.devToolsExtension && window.devToolsExtension()
+);
 
-const CounterReduxApp = () => {
+const CounterReduxApp3 = () => {
   return (
     <Provider store={store}>
       <App />
@@ -17,4 +20,4 @@ const CounterReduxApp = () => {
   );
 };
 
-export default CounterReduxApp;
+export default CounterReduxApp3;

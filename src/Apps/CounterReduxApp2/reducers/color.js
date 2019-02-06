@@ -6,11 +6,11 @@ const initialState = {
 };
 
 const color = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case types.SET_COLOR:
       return {
         color: action.color
-      }
+      };
     default:
       return state;
   }

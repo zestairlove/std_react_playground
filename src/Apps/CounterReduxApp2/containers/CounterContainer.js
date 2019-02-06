@@ -16,7 +16,7 @@ function getRandomColor() {
     '#37b24d',
     '#74b816',
     '#f59f00',
-    '#f76707' 
+    '#f76707'
   ];
 
   const random = Math.floor(Math.random() * 13);
