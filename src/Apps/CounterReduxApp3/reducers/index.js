@@ -1,3 +1,4 @@
+import update from 'immutability-helper';
 import * as types from '../actions/ActionTypes';
 
 // 초기 상태를 정의한다.
@@ -16,52 +17,48 @@ function counter(state = initialState, action) {
 
   switch (action.type) {
     case types.CREATE:
-      return {
-        counters: [
-          ...counters,
-          {
-            color: action.color,
-            number: 0
-          }
-        ]
-      };
+      return update(state, {
+        counters: {
+          $push: [
+            {
+              color: action.color,
+              number: 0
+            }
+          ]
+        }
+      });
     case types.REMOVE:
-      return {
-        counters: counters.slice(0, counters.length - 1)
-      };
+      return update(state, {
+        counters: {
+          $splice: [[counters.length - 1, 1]]
+        }
+      });
     case types.INCREMENT:
-      return {
-        counters: [
-          ...counters.slice(0, action.index), // 선택한 인덱스의 전 아이템들
-          {
-            ...counters[action.index],
-            number: counters[action.index].number + 1 // 새 number값 덮어쓰기
-          },
-          ...counters.slice(action.index + 1) // 선택한 인덱스의 다음 아이템들
-        ]
-      };
+      return update(state, {
+        counters: {
+          [action.index]: {
+            //number: { $set: counters[action.index].number + 1 }
+            number: { $apply: number => number + 1 }
+          }
+        }
+      });
     case types.DECREMENT:
-      return {
-        counters: [
-          ...counters.slice(0, action.index), // 선택한 인덱스의 전 아이템들
-          {
-            ...counters[action.index],
-            number: counters[action.index].number - 1 // 새 number값 덮어쓰기
-          },
-          ...counters.slice(action.index + 1) // 선택한 인덱스의 다음 아이템들
-        ]
-      };
+      return update(state, {
+        counters: {
+          [action.index]: {
+            //number: { $set: counters[action.index].number - 1 }
+            number: { $apply: number => number - 1 }
+          }
+        }
+      });
     case types.SET_COLOR:
-      return {
-        counters: [
-          ...counters.slice(0, action.index),
-          {
-            ...counters[action.index],
-            color: action.color
-          },
-          ...counters.slice(action.index + 1)
-        ]
-      };
+      return update(state, {
+        counters: {
+          [action.index]: {
+            color: { $set: action.color }
+          }
+        }
+      });
     default:
       return state;
   }
