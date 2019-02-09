@@ -4,13 +4,14 @@ import React, { Component } from 'react';
 //import CounterReduxApp from './Apps/CounterReduxApp';
 //import CounterReduxApp2 from './Apps/CounterReduxApp2';
 //import CounterReduxApp3 from './Apps/CounterReduxApp3';
-import CounterReduxApp4 from './Apps/CounterReduxApp4';
+//import CounterReduxApp4 from './Apps/CounterReduxApp4';
+import CounterReduxMiddleware from './Apps/CounterReduxMiddleware';
 
 class AppRoot extends Component {
   render() {
     return (
       <div className="AppRoot">
-        <CounterReduxApp4 />
+        <CounterReduxMiddleware />
       </div>
     );
   }
