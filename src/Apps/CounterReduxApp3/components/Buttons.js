@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import './Buttons.css';
 
@@ -14,16 +13,6 @@ const Buttons = ({ onCreate, onRemove }) => {
       </button>
     </div>
   );
-};
-
-Buttons.propTypes = {
-  onCreate: PropTypes.func,
-  onRemove: PropTypes.func
-};
-
-Buttons.defaultProps = {
-  onCreate: () => console.warn('onCreate not defined'),
-  onRemove: () => console.warn('onRemove not defined')
 };
 
 export default Buttons;
