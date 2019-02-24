@@ -4,26 +4,27 @@ import React, { Component } from 'react';
 class NameForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: '' }
+    this.state = { value: 'default value' };
   }
   // state = {
   //   value: ''
   // }
-  
+
   handleSubmit = e => {
     e.preventDefault();
     console.log('Submitted: ' + this.state.value);
-  }
+  };
 
   handleChange = e => {
+    // 핸들러로 state를 변경하지 않으면 값이 변경되지 않는다.
     //const { value } = e.target;
     console.log('handleChange');
     this.setState({
       value: e.target.value
       // value
       // value: value.toUpperCase()
-    })
-  }
+    });
+  };
 
   render() {
     const { value } = this.state;
@@ -33,11 +34,7 @@ class NameForm extends Component {
       <form onSubmit={handleSubmit} style={{ border: '1px solid #ccc' }}>
         <label>
           name :
-          <input
-            type="text"
-            value={value}
-            onChange={handleChange}
-          />
+          <input type="text" value={value} onChange={handleChange} />
         </label>
         <input type="submit" value="Submit" />
       </form>
