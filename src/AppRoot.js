@@ -12,12 +12,16 @@ import React, { Component } from 'react';
 //import ReactBindEvent from './Apps/ReactBindEvent';
 
 import Clock from './Apps/Clock';
+import NameForm from './Apps/NameForm';
+import Reservation from './Apps/Reservation';
 
 class AppRoot extends Component {
   render() {
     return (
       <div className="AppRoot">
         <Clock />
+        <NameForm />
+        <Reservation />
       </div>
     );
   }
