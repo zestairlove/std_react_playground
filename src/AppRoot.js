@@ -13,7 +13,9 @@ import React, { Component } from 'react';
 
 import Clock from './Apps/Clock';
 import NameForm from './Apps/NameForm';
+import NameForm2 from './Apps/NameForm2';
 import Reservation from './Apps/Reservation';
+import LoginControl from './Apps/LoginControl';
 
 class AppRoot extends Component {
   render() {
@@ -21,7 +23,9 @@ class AppRoot extends Component {
       <div className="AppRoot">
         <Clock />
         <NameForm />
+        <NameForm2 />
         <Reservation />
+        <LoginControl />
       </div>
     );
   }
