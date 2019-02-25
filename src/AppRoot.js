@@ -16,6 +16,7 @@ import NameForm from './Apps/NameForm';
 import NameForm2 from './Apps/NameForm2';
 import Reservation from './Apps/Reservation';
 import LoginControl from './Apps/LoginControl';
+import Mailbox from './Apps/Mailbox';
 
 class AppRoot extends Component {
   render() {
@@ -26,6 +27,7 @@ class AppRoot extends Component {
         <NameForm2 />
         <Reservation />
         <LoginControl />
+        <Mailbox />
       </div>
     );
   }
