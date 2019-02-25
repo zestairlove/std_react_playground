@@ -17,6 +17,7 @@ import NameForm2 from './Apps/NameForm2';
 import Reservation from './Apps/Reservation';
 import LoginControl from './Apps/LoginControl';
 import Mailbox from './Apps/Mailbox';
+import WarningBannerPage from './Apps/WarningBannerPage';
 
 class AppRoot extends Component {
   render() {
@@ -28,6 +29,7 @@ class AppRoot extends Component {
         <Reservation />
         <LoginControl />
         <Mailbox />
+        <WarningBannerPage />
       </div>
     );
   }
