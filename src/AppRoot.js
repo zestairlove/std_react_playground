@@ -20,6 +20,7 @@ import Mailbox from './Apps/Mailbox';
 import WarningBannerPage from './Apps/WarningBannerPage';
 import LifeCycleSample from './Apps/LifeCycleSample';
 import ComponentRef from './Apps/ComponentRef';
+import InputRef from './Apps/InputRef';
 
 class AppRoot extends Component {
   render() {
@@ -34,6 +35,7 @@ class AppRoot extends Component {
         <WarningBannerPage />
         <LifeCycleSample />
         <ComponentRef />
+        <InputRef />
       </div>
     );
   }
