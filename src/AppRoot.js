@@ -18,6 +18,8 @@ import Reservation from './Apps/Reservation';
 import LoginControl from './Apps/LoginControl';
 import Mailbox from './Apps/Mailbox';
 import WarningBannerPage from './Apps/WarningBannerPage';
+import LifeCycleSample from './Apps/LifeCycleSample';
+import ComponentRef from './Apps/ComponentRef';
 
 class AppRoot extends Component {
   render() {
@@ -30,6 +32,8 @@ class AppRoot extends Component {
         <LoginControl />
         <Mailbox />
         <WarningBannerPage />
+        <LifeCycleSample />
+        <ComponentRef />
       </div>
     );
   }
