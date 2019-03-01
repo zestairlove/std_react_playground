@@ -21,6 +21,7 @@ import WarningBannerPage from './Apps/WarningBannerPage';
 import LifeCycleSample from './Apps/LifeCycleSample';
 import ComponentRef from './Apps/ComponentRef';
 import InputRef from './Apps/InputRef';
+import InchToCm from './Apps/InchToCm';
 
 class AppRoot extends Component {
   render() {
@@ -36,6 +37,7 @@ class AppRoot extends Component {
         <LifeCycleSample />
         <ComponentRef />
         <InputRef />
+        <InchToCm />
       </div>
     );
   }
