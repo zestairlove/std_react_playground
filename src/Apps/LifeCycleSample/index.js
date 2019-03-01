@@ -7,9 +7,12 @@ function getRandomColor() {
 }
 
 class LifeCycleSample extends Component {
-  state = {
-    color: '#000000'
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      color: '#000000'
+    };
+  }
 
   handleClick = () => {
     this.setState({

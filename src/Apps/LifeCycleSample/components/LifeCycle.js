@@ -9,7 +9,6 @@ class LifeCycle extends Component {
     };
 
     this.myRef = null;
-
     console.log('constructor');
   }
 
@@ -61,16 +60,17 @@ class LifeCycle extends Component {
 
   render() {
     console.log('render');
+    const { number, color } = this.state;
     const style = {
       color: this.props.color
     };
 
     return (
       <div>
-        <p style={style} ref={ref => (this.myRef = ref)}>
-          {this.state.number}
+        <p style={style} ref={el => (this.myRef = el)}>
+          {number}
         </p>
-        <p>color: {this.state.color}</p>
+        <p>color: {color}</p>
         <button onClick={this.handleClick}>더하기</button>
       </div>
     );
