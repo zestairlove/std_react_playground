@@ -9,7 +9,7 @@ import React, { Component } from 'react';
 //import CounterReduxThunk from './Apps/CounterReduxThunk';
 //import CounterReduxPromiseMiddleware from './Apps/CounterReduxPromiseMiddleware';
 //import CounterReduxPender from './Apps/CounterReduxPender';
-//import ReactBindEvent from './Apps/ReactBindEvent';
+import ReactBindEvent from './Apps/ReactBindEvent';
 
 import Clock from './Apps/Clock';
 import NameForm from './Apps/NameForm';
@@ -27,6 +27,7 @@ class AppRoot extends Component {
   render() {
     return (
       <div className="AppRoot">
+        <ReactBindEvent />
         <Clock />
         <NameForm />
         <NameForm2 />
