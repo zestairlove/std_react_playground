@@ -15,7 +15,7 @@ import Clock from './Apps/Clock';
 import NameForm from './Apps/NameForm';
 import NameForm2 from './Apps/NameForm2';
 import Reservation from './Apps/Reservation';
-import LoginControl from './Apps/LoginControl';
+import LoginControl2 from './Apps/LoginControl2';
 import Mailbox from './Apps/Mailbox';
 import WarningBannerPage from './Apps/WarningBannerPage';
 import LifeCycleSample from './Apps/LifeCycleSample';
@@ -32,7 +32,7 @@ class AppRoot extends Component {
         <NameForm />
         <NameForm2 />
         <Reservation />
-        <LoginControl />
+        <LoginControl2 />
         <Mailbox />
         <WarningBannerPage />
         <LifeCycleSample />
