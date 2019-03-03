@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import WarningBanner from './components/WarningBanner';
 
+// 컴포넌트가 렌더링되지 못하도록 방지
 class WarningBannerPage extends Component {
   state = {
     showWarning: true
