@@ -6,14 +6,18 @@ class Reservation extends Component {
     comments: 'Have a nice day!',
     isGoing: true,
     numberOfGuests: 2,
-    selected: 'afternoon'
+    when: 'afternoon',
+    when2: 'evening'
   };
 
   handleInputChange = e => {
-    const target = e.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-    console.log(name, value);
+    const {
+      target,
+      target: { name, type }
+    } = e;
+    const value = type === 'checkbox' ? target.checked : target.value;
+
+    console.log(name, value, type);
 
     this.setState({
       [name]: value
@@ -28,7 +32,7 @@ class Reservation extends Component {
   };
 
   render() {
-    const { comments, isGoing, numberOfGuests, selected } = this.state;
+    const { comments, isGoing, numberOfGuests, when, when2 } = this.state;
     const { handleInputChange, handleSubmit } = this;
 
     return (
@@ -64,11 +68,43 @@ class Reservation extends Component {
         <br />
         <label>
           When:
-          <select name="selected" value={selected} onChange={handleInputChange}>
+          <select name="when" value={when} onChange={handleInputChange}>
             <option value="morning">Morning</option>
             <option value="afternoon">Aternoon</option>
             <option value="evening">Evening</option>
           </select>
+        </label>
+        <br />
+        <br />
+        <label>
+          Moning:
+          <input
+            type="radio"
+            name="when2"
+            value="morning"
+            checked={when2 === 'morning'}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Afternoon:
+          <input
+            type="radio"
+            name="when2"
+            value="afternoon"
+            checked={when2 === 'afternoon'}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Evening:
+          <input
+            type="radio"
+            name="when2"
+            value="evening"
+            checked={when2 === 'evening'}
+            onChange={handleInputChange}
+          />
         </label>
         <br />
         <input type="submit" value="Submit" />
