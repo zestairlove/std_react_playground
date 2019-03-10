@@ -2,27 +2,22 @@ import React, { Component } from 'react';
 
 // 제어 컴포넌트 Controlled Component
 class NameForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: 'default value' };
-  }
-  // state = {
-  //   value: ''
-  // }
+  state = {
+    value: 'default value'
+  };
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log('Submitted: ' + this.state.value);
+    const { value } = this.state;
+    console.log(value + ' Submitted');
+    this.setState({ value: '' });
   };
 
   handleChange = e => {
     // 핸들러로 state를 변경하지 않으면 값이 변경되지 않는다.
-    //const { value } = e.target;
-    console.log('handleChange');
+    const { value } = e.target;
     this.setState({
-      value: e.target.value
-      // value
-      // value: value.toUpperCase()
+      value: value.toUpperCase()
     });
   };
 
