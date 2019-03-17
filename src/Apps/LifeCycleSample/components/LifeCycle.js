@@ -61,8 +61,9 @@ class LifeCycle extends Component {
   render() {
     console.log('render');
     const { number, color } = this.state;
+    const { handleClick } = this;
     const style = {
-      color: this.props.color
+      color
     };
 
     return (
@@ -71,7 +72,7 @@ class LifeCycle extends Component {
           {number}
         </p>
         <p>color: {color}</p>
-        <button onClick={this.handleClick}>더하기</button>
+        <button onClick={handleClick}>더하기</button>
       </div>
     );
   }
