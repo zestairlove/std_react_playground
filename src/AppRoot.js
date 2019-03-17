@@ -23,10 +23,13 @@ import ComponentRef from './Apps/ComponentRef';
 import InputRef from './Apps/InputRef';
 import InchToCm from './Apps/InchToCm';
 
+import Styling from './Apps/Styling';
+
 class AppRoot extends Component {
   render() {
     return (
       <div className="AppRoot">
+        <Styling />
         <ReactBindEvent />
         <Clock />
         <NameForm />

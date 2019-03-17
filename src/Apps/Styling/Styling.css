@@ -1,0 +1,25 @@
+.Styling {
+  font-family: Georgia, serif;
+  color: #555;
+}
+
+.Styling__content {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.Styling__content::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 4px;
+  border-top: 1px solid #ccc;
+  background: #eaeaea;
+  content: '';
+}
+
+.Styling__contentHead {
+  font-size: 14px;
+  color: #333;
+}

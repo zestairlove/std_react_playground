@@ -1,0 +1,30 @@
+$font-family: Georgia, serif;
+$primary-text-color: #555;
+$heading-text-color: #333;
+
+.Styling {
+  font-family: $font-family;
+  color: $primary-text-color;
+
+  &__content {
+  position: relative;
+  padding-bottom: 4px;
+  }
+
+  &__content::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 4px;
+    border-top: 1px solid #ccc;
+    background: #eaeaea;
+    content: '';
+  }
+
+  &__contentHead {
+    font-size: 14px;
+    color: $heading-text-color;
+  }
+  
+}

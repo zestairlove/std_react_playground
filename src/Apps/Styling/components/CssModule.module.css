@@ -1,0 +1,23 @@
+.box {
+  width: 40px;
+  height: 40px;
+  background: gold;
+}
+
+.desc {
+  text-decoration: underline;
+  color: gray;
+}
+
+.emp {
+  font-weight: bold;
+}
+
+.highlight {
+  text-transform: uppercase;
+  color: gold;
+}
+
+:global .box {
+  border: 1px solid #000;
+}
