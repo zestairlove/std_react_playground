@@ -1,4 +1,4 @@
-export { default as BasicPage } from './BasicPage';
-export { default as ComponentsPage } from './ComponentsPage';
-export { default as CounterPage } from './CounterPage';
-export { default as StylingPage } from './StylingPage';
+export { default as Basic } from './Basic';
+export { default as Components } from './Components';
+export { default as Counters } from './Counters';
+export { default as Stylings } from './Stylings';
