@@ -12,6 +12,7 @@ const Menu = () => {
       <li><NavLink activeClassName={cx('is-active')} to="/components">Components</NavLink></li>
       <li><NavLink activeClassName={cx('is-active')} to="/stylings">Stylings</NavLink></li>
       <li><NavLink activeClassName={cx('is-active')} to="/counters">Counters</NavLink></li>
+      <li><NavLink activeClassName={cx('is-active')} to="/routepage">RoutePage</NavLink></li>
     </ul>
   );
 };
