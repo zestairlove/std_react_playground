@@ -4,29 +4,25 @@ import Buttons from '../components/Buttons';
 import getRandomColor from '../lib/getRandomColor';
 
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 // action creators
 import * as counterActions from '../modules/counter';
 
 class App extends Component {
   render() {
-    const { onCreate, onRemove } = this.props;
+    const { create: onCreate, remove: onRemove } = this.props.CounterActions;
     return (
       <div className="App">
-        <Buttons onCreate={onCreate} onRemove={onRemove} />
+        <Buttons onCreate={() => onCreate(getRandomColor())} onRemove={onRemove} />
         <CounterListContainer />
       </div>
     );
   }
 }
 
-// 액션 생성 함수 준비
-const mapDispatchToProps = dispatch => ({
-  onCreate: () => dispatch(counterActions.create(getRandomColor())),
-  onRemove: () => dispatch(counterActions.remove())
-});
-
 // 리덕스에 연결시키고 내보낸다.
 export default connect(
   null,
-  mapDispatchToProps
+  dispatch => ({ CounterActions: bindActionCreators(counterActions, dispatch) })
 )(App);
