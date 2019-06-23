@@ -10,6 +10,7 @@ import CounterReduxApp4 from '../Apps/CounterReduxApp4';
 import CounterReduxMiddleware from '../Apps/CounterReduxMiddleware';
 import CounterReduxMiddlewareTry from '../Apps/CounterReduxMiddlewareTry';
 import CounterReduxThunk from '../Apps/CounterReduxThunk';
+import CounterReduxThunkTry from '../Apps/CounterReduxThunkTry';
 import CounterReduxPromiseMiddleware from '../Apps/CounterReduxPromiseMiddleware';
 import CounterReduxPender from '../Apps/CounterReduxPender';
 
@@ -26,6 +27,7 @@ const Counters = ({ match }) => {
       <Route path={`${match.url}/reduxmiddleware`} component={CounterReduxMiddleware} />
       <Route path={`${match.url}/reduxmiddlewaretry`} component={CounterReduxMiddlewareTry} />
       <Route path={`${match.url}/reduxthunk`} component={CounterReduxThunk} />
+      <Route path={`${match.url}/reduxthunktry`} component={CounterReduxThunkTry} />
       <Route path={`${match.url}/reduxpromisemiddleware`} component={CounterReduxPromiseMiddleware} />
       <Route path={`${match.url}/reduxpender`} component={CounterReduxPender} />
     </div>

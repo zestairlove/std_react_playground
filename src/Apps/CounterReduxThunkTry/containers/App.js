@@ -6,23 +6,19 @@ import * as counterActions from '../modules/counter';
 
 class App extends Component {
   render() {
-    const { CounterActions, number } = this.props;
-    console.log('number', number);
+    const { number, CounterActions } = this.props;
 
     return (
       <div>
         <h1>{number}</h1>
-        <button onClick={CounterActions.increment}>+</button>
-        <button onClick={CounterActions.decrement}>-</button>
+        <button onClick={CounterActions.incrementAsync}>+</button>
+        <button onClick={CounterActions.decrementAsync}>-</button>
       </div>
     );
   }
 }
 
 export default connect(
-  state => {
-    console.log(state);
-    return { number: state.counter }
-  },
+  state => ({ number: state }),
   dispatch => ({ CounterActions: bindActionCreators(counterActions, dispatch) })
 )(App);
