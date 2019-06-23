@@ -9,7 +9,7 @@ import reducers from './reducers';
 // create store
 const store = createStore(
   reducers,
-  window.devToolsExtension && window.devToolsExtension()
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()
 );
 
 const CounterReduxApp3 = () => {

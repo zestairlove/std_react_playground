@@ -15,6 +15,7 @@ const CounterMenu = ({ match }) => {
       <li><NavLink activeClassName={cx('is-active')} to={`${match.url}/reduxapp3`}>CounterReduxApp3</NavLink></li>
       <li><NavLink activeClassName={cx('is-active')} to={`${match.url}/reduxapp4`}>CounterReduxApp4</NavLink></li>
       <li><NavLink activeClassName={cx('is-active')} to={`${match.url}/reduxmiddleware`}>CounterReduxMiddleware</NavLink></li>
+      <li><NavLink activeClassName={cx('is-active')} to={`${match.url}/reduxmiddlewaretry`}>CounterReduxMiddlewareTry</NavLink></li>
       <li><NavLink activeClassName={cx('is-active')} to={`${match.url}/reduxthunk`}>CounterReduxThunk</NavLink></li>
       <li><NavLink activeClassName={cx('is-active')} to={`${match.url}/reduxpromisemiddleware`}>CounterReduxPromiseMiddleware</NavLink></li>
       <li><NavLink activeClassName={cx('is-active')} to={`${match.url}/reduxpender`}>CounterReduxPender</NavLink></li>
