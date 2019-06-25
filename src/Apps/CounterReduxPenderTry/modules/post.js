@@ -1,0 +1,50 @@
+import { createAction, handleActions } from 'redux-actions';
+import { pender } from 'redux-pender';
+import axios from 'axios';
+
+function getPostAPI(postId) {
+  return axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}`);
+}
+
+const GET_POST = 'GET_POST';
+
+/**
+ * redux-pender의 액션 구조는 Flux standard action을 따르기 때문에, createAction으로 액션을 만들수 있다. 두 번째로 들어가는 파라미터는 Promise를 반환하는 함수여야 한다.
+ */
+
+export const getPost = createAction(GET_POST, getPostAPI);
+
+// reducer
+const initialState = {
+  // 요청이 진행 중인지, 오류가 발생했는지 더 이상 직접 관리할 필요가 없다.
+  // penderReducer가 담당하기 때문
+  data: {
+    title: '',
+    body: ''
+  }
+};
+
+export default handleActions(
+  {
+    ...pender({
+      // type이 주어지면 이 type에 접미사를 붙인 액션 핸들러들이 담긴 객체를 만든다.
+      type: GET_POST,
+      /**
+       * 요청 중일 때와 실패했을 때 추가로 해야 할 작업이 있다면
+       * onPending과 onFailure를 추가하면 된다.
+       * 
+       * onPending: (state, action) => state,
+       * onFailure: (state, action) => state
+       */
+      onSuccess: (state, action) => {
+        // 성공했을 때 해야 할 작업이 따로 없으면 이 함수 또한 생략해도 된다.
+        const { title, body } = action.payload.data;
+        return { data: { title, body } };
+      },
+      onCancel: (state, action) => ({
+        data: { title: '취소됨', body: '취소됨' }
+      })
+    })
+  },
+  initialState
+);

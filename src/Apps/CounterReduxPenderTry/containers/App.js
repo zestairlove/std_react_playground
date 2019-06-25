@@ -6,24 +6,33 @@ import * as counterActions from '../modules/counter';
 import * as postActions from '../modules/post';
 
 class App extends Component {
-  loadData = () => {
+  cancelRequest = null;
+
+  handleCancel = () => {
+    if (this.cancelRequest) {
+      this.cancelRequest();
+      this.cancelRequest = null;
+    }
+  }
+
+  loadData = async () => {
     const { number, PostActions } = this.props;
-    PostActions.getPost(number)
-      .catch(err => {
-        console.log(err);
-      });
+    try {
+      const p = PostActions.getPost(number);
+      this.cancelRequest = p.cancel;
+      await p;
+    } catch(err) {
+      console.log(err);
+    }
   };
-  // loadData = async () => {
-  //   const { number, PostActions } = this.props;
-  //   try {
-  //     await PostActions.getPost(number);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
 
   componentDidMount() {
     this.loadData();
+    window.addEventListener('keyup', e => {
+      if (e.key === 'Escape') {
+        this.handleCancel();
+      }
+    })
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -38,20 +47,6 @@ class App extends Component {
     return (
       <div>
         <h1>{number}</h1>
-        {/* {
-          loading
-            ? (<h2>로딩 중...</h2>)
-            : (
-              error
-                ? (<h2>오류 발생!</h2>)
-                : (
-                  <div>
-                    <h2>{post.title}</h2>
-                    <p>{post.body}</p>
-                  </div>
-                )
-            )
-        } */}
         {
           (() => {
             if (loading) {
@@ -79,8 +74,8 @@ export default connect(
   state => ({
     number: state.counter,
     post: state.post.data,
-    loading: state.post.pending,
-    error: state.post.error
+    loading: state.pender.pending['GET_POST'],
+    error: state.pender.failure['GET_POST']
   }),
   dispatch => ({
     CounterActions: bindActionCreators(counterActions, dispatch),

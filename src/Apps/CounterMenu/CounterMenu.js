@@ -19,7 +19,9 @@ const CounterMenu = ({ match }) => {
       <li><NavLink activeClassName={cx('is-active')} to={`${match.url}/reduxthunk`}>CounterReduxThunk</NavLink></li>
       <li><NavLink activeClassName={cx('is-active')} to={`${match.url}/reduxthunktry`}>CounterReduxThunkTry</NavLink></li>
       <li><NavLink activeClassName={cx('is-active')} to={`${match.url}/reduxpromisemiddleware`}>CounterReduxPromiseMiddleware</NavLink></li>
+      <li><NavLink activeClassName={cx('is-active')} to={`${match.url}/reduxpromisemiddlewaretry`}>CounterReduxPromiseMiddlewareTry</NavLink></li>
       <li><NavLink activeClassName={cx('is-active')} to={`${match.url}/reduxpender`}>CounterReduxPender</NavLink></li>
+      <li><NavLink activeClassName={cx('is-active')} to={`${match.url}/reduxpendertry`}>CounterReduxPenderTry</NavLink></li>
     </ul>
   );
 };
