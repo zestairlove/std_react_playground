@@ -10,7 +10,6 @@ const GET_POST_PENDING = 'GET_POST_PENDING';
 const GET_POST_SUCCESS = 'GET_POST_SUCCESS';
 const GET_POST_FAILURE = 'GET_POST_FAILURE';
 
-// thunk 생성 함수
 export const getPost = postId => ({
   type: GET_POST,
   payload: getPostAPI(postId)
