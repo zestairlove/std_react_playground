@@ -7,6 +7,7 @@ import modules from './modules';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const logger = createLogger();
+// ['PENDING', 'FULFILLED', 'REJECTED']
 const pm = createPromise({
   promiseTypeSuffixes: ['PENDING', 'SUCCESS', 'FAILURE']
 });

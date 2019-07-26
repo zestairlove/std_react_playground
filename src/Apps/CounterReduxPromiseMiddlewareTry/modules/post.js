@@ -6,9 +6,6 @@ function getPostAPI(postId) {
 }
 
 const GET_POST = 'GET_POST';
-const GET_POST_PENDING = 'GET_POST_PENDING';
-const GET_POST_SUCCESS = 'GET_POST_SUCCESS';
-const GET_POST_FAILURE = 'GET_POST_FAILURE';
 
 export const getPost = postId => ({
   type: GET_POST,
@@ -27,12 +24,12 @@ const initialState = {
 
 export default handleActions(
   {
-    [GET_POST_PENDING]: (state, action) => ({
+    [`${GET_POST}_PENDING`]: (state, action) => ({
       ...state,
       pending: true,
       error: false
     }),
-    [GET_POST_SUCCESS]: (state, action) => {
+    [`${GET_POST}_SUCCESS`]: (state, action) => {
       const { title, body } = action.payload.data;
       return {
         ...state,
@@ -41,7 +38,7 @@ export default handleActions(
         data: { title, body }
       };
     },
-    [GET_POST_FAILURE]: (state, action) => ({
+    [`${GET_POST}_FAILURE`]: (state, action) => ({
       ...state,
       pending: false,
       error: true
